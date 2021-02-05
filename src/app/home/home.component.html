@@ -1,0 +1,24 @@
+<div class="main">
+    <!-- <button (click)="logout()"> Logout </button> -->
+    <header>
+        <span class="userName">{{"Hi "}} {{loggedUserInfo.name|uppercase}}</span>
+        <a (click)="logout()" data-toggle="tooltip" title="Logout"><i class='fa fa-sign-out' style="padding-left: 5px;cursor: pointer;"></i></a>
+    </header>
+    <h5 class="tblHeading">Student Details</h5>
+    <div class="tbleContent row">
+        <div class="col-sm-3"></div>
+        <table class="mat-elevation-z8 col-sm-6">
+            <thead>
+                <tr>
+                    <th *ngFor='let p of fields'> {{ p }} </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let info of totlaUserInfo'>
+                    <td *ngFor='let p of fields'> {{ info[p] }} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

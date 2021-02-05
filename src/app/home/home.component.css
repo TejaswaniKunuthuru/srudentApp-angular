@@ -1,0 +1,28 @@
+header {
+    background-color: lightblue;
+    text-align: right;
+    padding: 10px 20px;
+    height: 40px;
+  }
+  .tbleContent {
+    text-align: center;
+  }
+  .tblHeading {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  table,
+  th,
+  td,
+  tr {
+    border: 1px solid gray;
+    border-collapse: collapse;
+  }
+  th {
+    background-color: lightgray;
+  }
+  table {
+    border-radius: 10px;
+  }
+  
