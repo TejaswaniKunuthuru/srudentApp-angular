@@ -1,0 +1,60 @@
+<div class="container col-sm-4 col-sm-offset-4">
+    
+      <h2>Registration</h2>
+      <form #regForm="ngForm" (submit)="stdRegister(regForm)">
+          <mat-form-field class="col-sm-10">
+              <input #id1="ngModel" matInput placeholder="Student Id" name="id" [(ngModel)]="id" required>
+              <mat-error *ngIf="regForm.invalid && id1.invalid">
+                  {{(id1.errors.required) ? ' Please Enter Student Id ':''}}
+              </mat-error>
+          </mat-form-field>
+          <mat-form-field class="col-sm-10">
+              <input #nam="ngModel" matInput placeholder="Name" name="name" [(ngModel)]="name" required>
+              <mat-error *ngIf="regForm.invalid && nam.invalid">
+                  {{(nam.errors.required) ? ' Please Enter Name ':''}}
+              </mat-error>
+          </mat-form-field>
+          <mat-form-field class="col-sm-10">
+              <input #pwd="ngModel" matInput placeholder="Password" type="password" name="password"
+                      [(ngModel)]="password" required>
+              <mat-error *ngIf="regForm.invalid && pwd.invalid">
+                  {{(pwd.errors.required) ? ' Please Enter Password ':''}}
+              </mat-error>
+          </mat-form-field>
+          <mat-form-field class="col-sm-10">
+              <mat-select #crse="ngModel" placeholder="Courses" [(ngModel)]="course" name="course" required>
+                  <mat-option *ngFor="let course of courses" [value]="course">
+                      {{course}}
+                  </mat-option>
+              </mat-select>
+              <mat-error *ngIf="regForm.invalid && crse.invalid">
+                  {{(crse.errors.required) ? ' Please Select Course ':''}}
+              </mat-error>
+          </mat-form-field>
+          <mat-form-field class="col-sm-10">
+              <input #cty="ngModel" matInput placeholder="City" name="city" [(ngModel)]="city" required>
+              <mat-error *ngIf="regForm.invalid && cty.invalid">
+                  {{(cty.errors.required) ? ' Please Enter City ':''}}
+              </mat-error>
+          </mat-form-field>
+          <mat-form-field class="col-sm-10">
+              <input #stat="ngModel" matInput placeholder="State" name="state" [(ngModel)]="state" required>
+              <mat-error *ngIf="regForm.invalid && stat.invalid">
+                  {{(stat.errors.required) ? ' Please Enter State ':''}}
+              </mat-error>
+          </mat-form-field>
+          <mat-form-field class="col-sm-10">
+              <input #cntry="ngModel" matInput placeholder="Country" name="country" [(ngModel)]="country" required>
+              <mat-error *ngIf="regForm.invalid && cntry.invalid">
+                  {{(cntry.errors.required) ? ' Please Enter Country ':''}}
+              </mat-error>
+          </mat-form-field>
+        
+          <div class="col-sm-10">
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <a [routerLink]="['/login']" class="btn btn-link">Cancel</a>
+          </div>
+          <br>
+          </form>
+          <p *ngIf="throwError" class="alert alert-danger">Unable to create a studnet because user id already exists</p>
+  </div>
